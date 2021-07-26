@@ -15,7 +15,7 @@ radius = 84.657
 mass = 1.02041
 gravity_scale = 66.0
 can_sleep = false
-applied_force = Vector2( 0, 10 )
+applied_force = Vector2( 0, 5 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

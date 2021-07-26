@@ -8,18 +8,18 @@
 script = ExtResource( 1 )
 Splatter = ExtResource( 2 )
 
-[node name="Water_body" parent="." instance=ExtResource( 3 )]
+[node name="Piss" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 384 )
 
-[node name="Water_polygon" parent="Water_body" index="0"]
-color = Color( 1, 0.709804, 0.156863, 1 )
+[node name="Water_polygon" parent="Piss" index="0"]
+color = Color( 1, 0.760784, 0.0392157, 0.941176 )
 
-[node name="Water_body2" parent="." instance=ExtResource( 3 )]
+[node name="Cum" parent="." instance=ExtResource( 3 )]
 position = Vector2( 512, 384 )
 
-[node name="Water_polygon" parent="Water_body2" index="0"]
-color = Color( 0.529412, 0.0627451, 0.792157, 0.8 )
+[node name="Water_polygon" parent="Cum" index="0"]
+color = Color( 0.509804, 0.180392, 0.737255, 1 )
 
-[editable path="Water_body"]
+[editable path="Piss"]
 
-[editable path="Water_body2"]
+[editable path="Cum"]

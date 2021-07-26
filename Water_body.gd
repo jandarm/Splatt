@@ -24,6 +24,8 @@ onready var water_polygon = $Water_polygon
 onready var collisionShape = $Water_body_area/CollisionShape2D
 onready var water_body_area = $Water_body_area
 
+signal hit
+
 func _ready():
 	for i in range(spring_number):
 		var x_position = distance_between_springs * i
@@ -39,7 +41,8 @@ func _ready():
 	var rect_position = Vector2(total_lenght/2, depth/2)
 	var rect_extents = Vector2(total_lenght/2, depth/2)
 	
-	water_body_area.position = rect_position
+	water_body_area.position.y = rect_position.y - 20
+	water_body_area.position.x = rect_position.x
 	rectangle.set_extents(rect_extents)
 	collisionShape.set_shape(rectangle)
 	
@@ -96,5 +99,5 @@ func draw_water_body():
 
 
 func _on_Water_body_area_body_entered(body):
-	
+	emit_signal("hit")
 	pass
