@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Splatter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Water_body.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 256, 99.108 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+Splatter = ExtResource( 2 )
+
+[node name="Yellow_pool" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Yellow_pool"]
+position = Vector2( 256, 503.559 )
+shape = SubResource( 1 )
+
+[node name="Water_body" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2.20341, 406.38 )
+distance_between_springs = 50
+spring_number = 10
+[connection signal="body_entered" from="Yellow_pool" to="." method="_on_Area2D_body_entered"]

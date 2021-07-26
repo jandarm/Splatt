@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Water_body.gd" type="Script" id=2]
+
+[node name="Water_body" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Water_polygon" type="Polygon2D" parent="."]
+color = Color( 0.258824, 0.235294, 0.164706, 0.568627 )
+
+[node name="Water_body_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_body_area"]
+[connection signal="body_entered" from="Water_body_area" to="." method="_on_Water_body_area_body_entered"]
