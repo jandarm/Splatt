@@ -8,10 +8,12 @@ export var spread = 0.0002
 var springs = []
 var passes = 8
 
-export var distance_between_springs = 32
-export var spring_number = 6
 
-var water_lenght = distance_between_springs * spring_number
+onready var half_monitor = OS.get_window_size().x/2
+export var distance_between_springs = 32
+onready var spring_number = half_monitor/distance_between_springs + 1
+
+onready var water_lenght = distance_between_springs * spring_number
 onready var water_spring = preload("res://Water_spring.tscn")
 
 export var depth = 1000

@@ -3,6 +3,7 @@ extends RigidBody2D
 onready var motion = self.applied_force
 
 func _ready():
+	self.scale = Vector2((OS.get_window_size().x / 10) * 0.001, (OS.get_window_size().y / 10) * 0.001)
 	pass
 
 func _on_VisibilityNotifier2D_screen_exited():

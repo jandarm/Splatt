@@ -29,7 +29,6 @@ func _process(delta):
 func _input(event):
 	# size of the viewport.
 	window_size = get_viewport_rect().size
-	#var scale = Vector2(get_viewport().size.x, get_viewport().size.y)
 	ev = event
    # Mouse in viewport coordinates.
 	if(event.is_action_pressed("LClick")):
@@ -39,7 +38,6 @@ func _input(event):
 			new_splat.position = get_viewport().get_mouse_position()
 			new_splat.change_tint("yellow")
 			add_child(new_splat)
-			#new_splat.scale = Vector2(10, 10)
 		elif(ev.position >= window_size/2):
 			var new_splat = Splatter.instance()
 			new_splat.position = get_viewport().get_mouse_position()
@@ -53,8 +51,3 @@ func _input(event):
 #		elif event.button_index == 1 and not event.is_pressed():
 #			mouse_left_down = false
 	pass
-
-
-func _on_Area2D_body_entered(_body):
-	print("1")
-	pass # Replace with function body.
