@@ -1,6 +1,9 @@
 extends Node2D
 
 export (PackedScene) var Splatter
+onready var music_low = preload("res://Sound/IG2 Low.wav")
+onready var music_med = preload("res://Sound/IG2 Med.wav")
+onready var music_high = preload("res://Sound/IG2 HIGh.wav")
 
 var mouse_left_down = false
 var window_size
@@ -8,6 +11,11 @@ var ev
 
 var puddle_piss
 var puddle_cum
+
+var playing_pos = 0
+
+var music
+var sound
 
 func _ready():
 	puddle_piss = get_node("Piss")
@@ -18,10 +26,17 @@ func _ready():
 	
 	puddle_piss.connect("hit", self, "hit_piss")
 	puddle_cum.connect("hit", self, "hit_cum")
+	
+	music = get_node("MusicPlayer")
+	sound = get_node("SFPlayer")
+	
+	music.set_stream(music_low)
+	music.play()
 	pass 
 
 # warning-ignore:unused_argument
 func _process(delta):
+	maestro_music()
 	#rappid fire
 #	if mouse_left_down:
 #		if(ev.position < window_size/2):
@@ -45,7 +60,7 @@ func hit_piss():
 	pass
 
 func hit_cum():
-	puddle_cum.position.y -= 40
+	puddle_cum.position.y -= 40	
 	pass
 
 func _input(event):
@@ -60,6 +75,7 @@ func _input(event):
 			new_splat.position = get_viewport().get_mouse_position()
 			new_splat.change_tint("yellow")
 			add_child(new_splat)
+			sound.play()
 			#take care of scaling!!!!!!!!
 			#new_splat.get_node("Sprite").scale = Vector2((OS.get_window_size().x / 10) * 0.003, (OS.get_window_size().y / 10) * 0.003)
 		elif(ev.position >= window_size/2):
@@ -67,6 +83,7 @@ func _input(event):
 			new_splat.position = get_viewport().get_mouse_position()
 			new_splat.change_tint("purple")
 			add_child(new_splat)
+			sound.play()
 	
 	#for rappid fire
 #	if event is InputEventMouseButton:
@@ -74,4 +91,29 @@ func _input(event):
 #			mouse_left_down = true
 #		elif event.button_index == 1 and not event.is_pressed():
 #			mouse_left_down = false
+	pass
+
+
+func maestro_music():
+	if(puddle_piss.position.y < get_viewport().size.y/1.8):
+		if(playing_pos == 0):
+			playing_pos += 1
+			music.set_stream(music_med)
+			music.play()
+	elif(puddle_cum.position.y < get_viewport().size.y/1.8):
+		if(playing_pos == 0):
+			playing_pos += 1
+			music.set_stream(music_med)
+			music.play()
+			
+	if(puddle_piss.position.y < get_viewport().size.y/4):
+		if(playing_pos == 1):
+			playing_pos += 1
+			music.set_stream(music_high)
+			music.play()
+	elif(puddle_cum.position.y < get_viewport().size.y/4):
+		if(playing_pos == 1):
+			playing_pos += 1
+			music.set_stream(music_high)
+			music.play()
 	pass

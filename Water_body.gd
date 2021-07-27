@@ -41,7 +41,7 @@ func _ready():
 	var rect_position = Vector2(total_lenght/2, depth/2)
 	var rect_extents = Vector2(total_lenght/2, depth/2)
 	
-	water_body_area.position.y = rect_position.y - 20
+	water_body_area.position.y = rect_position.y - 30
 	water_body_area.position.x = rect_position.x
 	rectangle.set_extents(rect_extents)
 	collisionShape.set_shape(rectangle)

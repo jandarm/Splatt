@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/inkHit05.wav-f6ae805f67b824cd81360f167ba2eade.sample"
+
+[deps]
+
+source_file="res://Sound/inkHit05.wav"
+dest_files=[ "res://.import/inkHit05.wav-f6ae805f67b824cd81360f167ba2eade.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
