@@ -9,7 +9,7 @@ shader = ExtResource( 3 )
 shader_param/silhouette_color = null
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 84.657
+radius = 55.2293
 
 [node name="RigidBody2D" type="RigidBody2D"]
 mass = 1.02041
@@ -28,5 +28,7 @@ position = Vector2( 6.306, 5.98996 )
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -3.25195, -3.25196 )
+scale = Vector2( 0.855795, 0.855795 )
 rect = Rect2( -85, -85, 180, 180 )
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
