@@ -1,25 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Splatter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Water_body.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sound/inkHit05.wav" type="AudioStream" id=4]
+[ext_resource path="res://Background/Banana.png" type="Texture" id=5]
+[ext_resource path="res://Background/Grape.png" type="Texture" id=6]
+[ext_resource path="res://Background/Ship.jpg" type="Texture" id=7]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 Splatter = ExtResource( 2 )
 
+[node name="Ship_background" type="Sprite" parent="."]
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 7 )
+centered = false
+
 [node name="Piss" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 384 )
 
 [node name="Water_polygon" parent="Piss" index="0"]
-color = Color( 1, 0.760784, 0.0392157, 0.941176 )
+color = Color( 1, 0.760784, 0.0392157, 0.745098 )
 
 [node name="Cum" parent="." instance=ExtResource( 3 )]
 position = Vector2( 512, 384 )
 
 [node name="Water_polygon" parent="Cum" index="0"]
-color = Color( 0.537255, 0.0470588, 0.909804, 1 )
+color = Color( 0.537255, 0.0470588, 0.909804, 0.745098 )
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 bus = "Music"
@@ -27,6 +35,19 @@ bus = "Music"
 [node name="SFPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 bus = "SF"
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="Banana" type="Sprite" parent="Node2D"]
+position = Vector2( 256, 384 )
+scale = Vector2( -0.800152, 0.874141 )
+texture = ExtResource( 5 )
+
+[node name="Grape" type="Sprite" parent="Node2D"]
+position = Vector2( 788, 384 )
+scale = Vector2( -0.282335, 0.26849 )
+texture = ExtResource( 6 )
 
 [editable path="Piss"]
 

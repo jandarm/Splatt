@@ -100,4 +100,5 @@ func draw_water_body():
 
 func _on_Water_body_area_body_entered(body):
 	emit_signal("hit")
+	body.free()
 	pass
