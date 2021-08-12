@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Script/Main/Manager.gd" type="Script" id=1]
+
+[node name="Manager" type="Node"]
+script = ExtResource( 1 )
+Colours = {
+"Blue": Color( 0.733333, 0.988235, 0.956863, 1 ),
+"Green": Color( 0.552941, 0.713726, 0, 1 ),
+"Indigo": Color( 0.258824, 0.372549, 0.831373, 1 ),
+"Orange": Color( 1, 0.556863, 0.168627, 1 ),
+"Purple": Color( 0.537255, 0.0470588, 0.909804, 1 ),
+"Red": Color( 0.921569, 0.258824, 0.211765, 1 ),
+"Yellow": Color( 0.988235, 0.729412, 0.0117647, 1 )
+}

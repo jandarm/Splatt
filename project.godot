@@ -15,10 +15,16 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Splatt"
-run/main_scene="res://Main.tscn"
+config/name="Пятна"
+run/main_scene="res://Scenes/Main/Main.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="UserSaves"
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
+
+[autoload]
+
+Manager="*res://Scenes/Main/Manager.tscn"
 
 [display]
 
@@ -37,3 +43,4 @@ LClick={
 
 environment/default_clear_color=Color( 0.317647, 0.317647, 0.317647, 1 )
 environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false
