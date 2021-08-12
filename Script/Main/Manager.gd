@@ -1,12 +1,14 @@
 extends Node
 
-export var music_low = preload("res://Sound/IG2 Low.wav")
-export var music_med = preload("res://Sound/IG2 Med.wav")
-export var music_high = preload("res://Sound/IG2 HIGh.wav")
+export(AudioStreamSample) var music_low
+export(AudioStreamSample) var music_med
+export(AudioStreamSample) var music_high
 
-var Color_left_team : Color
-var Color_right_team : Color
+var Left_team_color : Color
+var Right_team_color : Color
 
+export(Texture) var Left_team_background
+export(Texture) var Right_team_background
 
 """
 пример ограниченного выбора
@@ -33,8 +35,8 @@ export var Colours = {
 func _ready():
 	print(settt(Colours.Blue))
 	
-	Color_left_team = Colours.Orange
-	Color_right_team = Colours.Blue
+	Left_team_color = Colours.Green
+	Right_team_color = Colours.Indigo
 	pass
 
 func settt(e : Color):

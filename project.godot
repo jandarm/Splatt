@@ -41,6 +41,6 @@ LClick={
 
 [rendering]
 
-environment/default_clear_color=Color( 0.317647, 0.317647, 0.317647, 1 )
+environment/default_clear_color=Color( 0.952941, 0.988235, 0.862745, 1 )
 environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=false
