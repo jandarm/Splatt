@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Пятна"
-run/main_scene="res://Scenes/Main/Main.tscn"
+run/main_scene="res://Scenes/VS/VS.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="UserSaves"
 config/icon="res://icon.png"

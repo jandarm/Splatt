@@ -4,6 +4,8 @@ export(AudioStreamSample) var music_low
 export(AudioStreamSample) var music_med
 export(AudioStreamSample) var music_high
 
+export (PackedScene) var Game_over_scene
+
 var Left_team_color : Color
 var Right_team_color : Color
 
@@ -29,7 +31,6 @@ export var Colours = {
 	"Indigo" : Color("#425fd4"), #синий
 	"Purple" : Color("#890ce8"),
 }
-
 
 
 func _ready():

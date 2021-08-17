@@ -8,8 +8,8 @@ export (PackedScene) var Splatter
 var window_size
 var ev
 
-var puddle_piss
-var puddle_cum
+var puddle_left
+var puddle_right
 
 var left_bg
 var right_bg
@@ -20,8 +20,8 @@ var music
 var sound
 
 func _ready():
-	puddle_piss = get_node("Piss")
-	puddle_cum = get_node("Cum")
+	puddle_left = get_node("PuddleLeft")
+	puddle_right = get_node("PuddleRight")
 	
 	left_bg = get_node("Background/LeftTeamBG")
 	right_bg = get_node("Background/RightTeamBG")
@@ -29,14 +29,14 @@ func _ready():
 	left_bg.texture = Manager.Left_team_background
 	right_bg.texture = Manager.Right_team_background
 	
-	puddle_piss.water_polygon.set_color(Manager.Left_team_color)
-	puddle_cum.water_polygon.set_color(Manager.Right_team_color)
+	puddle_left.water_polygon.set_color(Manager.Left_team_color)
+	puddle_right.water_polygon.set_color(Manager.Right_team_color)
 	
-	puddle_piss.position.y = get_viewport().size.y - 20
-	puddle_cum.position.y = get_viewport().size.y - 20
+	puddle_left.position.y = get_viewport().size.y - 20
+	puddle_right.position.y = get_viewport().size.y - 20
 	
-	puddle_piss.connect("hit", self, "hit_piss")
-	puddle_cum.connect("hit", self, "hit_cum")
+	puddle_left.connect("hit", self, "hit_left")
+	puddle_right.connect("hit", self, "hit_right")
 	
 	music = get_node("MusicPlayer")
 	sound = get_node("SFPlayer")
@@ -60,18 +60,18 @@ func _process(delta):
 #			new_splat.position = get_viewport().get_mouse_position()
 #			new_splat.change_tint("purple")
 #			add_child(new_splat)
-	if(puddle_piss.position.y < 0):
-		get_tree().quit()
-	elif(puddle_cum.position.y < 0):
-		get_tree().quit()
+	if(puddle_left.position.y < 0):
+		music.stop()
+	elif(puddle_right.position.y < 0):
+		music.stop()
 	pass
 
-func hit_piss():
-	puddle_piss.position.y -= 40
+func hit_left():
+	puddle_left.position.y -= 40
 	pass
 
-func hit_cum():
-	puddle_cum.position.y -= 40	
+func hit_right():
+	puddle_right.position.y -= 40
 	pass
 
 func _input(event):
@@ -85,6 +85,7 @@ func _input(event):
 			var new_splat = Splatter.instance()
 			new_splat.position = get_viewport().get_mouse_position()
 			new_splat.change_tint(Manager.Left_team_color)
+			#new_splat.show_behind_parent = true
 			add_child(new_splat)
 			sound.play()
 			#take care of scaling!!!!!!!!
@@ -93,6 +94,7 @@ func _input(event):
 			var new_splat = Splatter.instance()
 			new_splat.position = get_viewport().get_mouse_position()
 			new_splat.change_tint(Manager.Right_team_color)
+			#new_splat.show_behind_parent = true
 			add_child(new_splat)
 			sound.play()
 	
@@ -106,23 +108,23 @@ func _input(event):
 
 
 func maestro_music():
-	if(puddle_piss.position.y < get_viewport().size.y/1.8):
+	if(puddle_left.position.y < get_viewport().size.y/1.8):
 		if(game_stage == 0):
 			game_stage += 1
 			music.set_stream(Manager.music_med)
 			music.play()
-	elif(puddle_cum.position.y < get_viewport().size.y/1.8):
+	elif(puddle_right.position.y < get_viewport().size.y/1.8):
 		if(game_stage == 0):
 			game_stage += 1
 			music.set_stream(Manager.music_med)
 			music.play()
 			
-	if(puddle_piss.position.y < get_viewport().size.y/4):
+	if(puddle_left.position.y < get_viewport().size.y/4):
 		if(game_stage == 1):
 			game_stage += 1
 			music.set_stream(Manager.music_high)
 			music.play()
-	elif(puddle_cum.position.y < get_viewport().size.y/4):
+	elif(puddle_right.position.y < get_viewport().size.y/4):
 		if(game_stage == 1):
 			game_stage += 1
 			music.set_stream(Manager.music_high)
