@@ -1,44 +1,17 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Capitalist.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/Splatter/win_splash.png" type="Texture" id=2]
+[ext_resource path="res://Assets/WinBackground.tres" type="StyleBox" id=2]
 [ext_resource path="res://Script/Main/Game_over.gd" type="Script" id=3]
 [ext_resource path="res://Sound/GameOver.wav" type="AudioStream" id=4]
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=1]
 size = 50
-outline_size = 4
+outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 600, 514 )
-modulate_color = Color( 0.145098, 0.686275, 0.662745, 1 )
-
-[sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 600, 514 )
-
-[sub_resource type="StyleBoxTexture" id=10]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 600, 514 )
-
-[sub_resource type="Theme" id=11]
-resource_local_to_scene = true
-Button/colors/font_color = Color( 1, 1, 1, 1 )
-Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
-Button/constants/hseparation = 2
-Button/fonts/font = SubResource( 7 )
-Button/styles/disabled = null
-Button/styles/focus = null
-Button/styles/hover = SubResource( 8 )
-Button/styles/normal = SubResource( 9 )
-Button/styles/pressed = SubResource( 10 )
-
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 resource_name = "Idle"
 length = 1.6
 loop = true
@@ -97,7 +70,11 @@ focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = SubResource( 11 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 enabled_focus_mode = 0
 text = "Красные победили!"
 __meta__ = {
@@ -106,7 +83,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Button"]
 autoplay = "Idle"
-anims/Idle = SubResource( 6 )
+anims/Idle = SubResource( 2 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )

@@ -5,12 +5,18 @@ export(AudioStreamSample) var music_med
 export(AudioStreamSample) var music_high
 
 export (PackedScene) var Game_over_scene
+export (PackedScene) var Main_scene
+export (PackedScene) var Settings_scene
+export (PackedScene) var VS_scene
+export (PackedScene) var Coop_scene
 
 var Left_team_color : Color
 var Right_team_color : Color
 
 export(Texture) var Left_team_background
 export(Texture) var Right_team_background
+
+export (StyleBoxTexture) var win_background
 
 """
 пример ограниченного выбора
@@ -36,9 +42,14 @@ export var Colours = {
 func _ready():
 	print(settt(Colours.Blue))
 	
-	Left_team_color = Colours.Green
-	Right_team_color = Colours.Indigo
+	Left_team_color = Colours.Yellow
+	Right_team_color = Colours.Purple
 	pass
+
+# warning-ignore:unused_argument
+func _process(delta):
+	if Input.is_action_pressed("Exit_to_menu"):
+		SceneChanger.connector("")
 
 func settt(e : Color):
 	return e

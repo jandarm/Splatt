@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Capitalist.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/UI/UI_Elements01.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/UI_Elements02.png" type="Texture" id=2]
+[ext_resource path="res://Script/Main/Menu_navigation.gd" type="Script" id=3]
+[ext_resource path="res://Assets/UI/UI_Elements01.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -10,10 +12,20 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 2 )
-region_rect = Rect2( 339, 82, 66, 66 )
+texture = ExtResource( 4 )
+region_rect = Rect2( 372, 338, 47, 43 )
+modulate_color = Color( 1, 0.435294, 0.435294, 1 )
 
-[sub_resource type="Theme" id=3]
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 373, 339, 45, 41 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 4 )
+region_rect = Rect2( 372, 338, 47, 43 )
+modulate_color = Color( 1, 0.92549, 0.305882, 1 )
+
+[sub_resource type="Theme" id=5]
 resource_local_to_scene = true
 Button/colors/font_color = Color( 1, 1, 1, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
@@ -23,29 +35,90 @@ Button/constants/hseparation = 2
 Button/fonts/font = SubResource( 1 )
 Button/styles/disabled = null
 Button/styles/focus = null
-Button/styles/hover = null
-Button/styles/normal = SubResource( 2 )
-Button/styles/pressed = null
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 4 )
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_left = 111.0
-margin_top = 107.0
-margin_right = 366.0
-margin_bottom = 237.0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = SubResource( 3 )
-shortcut_in_tooltip = false
-enabled_focus_mode = 0
-text = "Тест"
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="btnVS" type="Button" parent="GridContainer"]
+margin_right = 510.0
+margin_bottom = 382.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Битва красок"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnCoop" type="Button" parent="GridContainer"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 382.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Раскопки"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnOptions" type="Button" parent="GridContainer"]
+margin_top = 386.0
+margin_right = 510.0
+margin_bottom = 768.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Опции"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnExit" type="Button" parent="GridContainer"]
+margin_left = 514.0
+margin_top = 386.0
+margin_right = 1024.0
+margin_bottom = 768.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Выйти"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="GridContainer/btnVS" to="." method="change_scene" binds= [ "VS" ]]

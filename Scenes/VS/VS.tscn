@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Splatter/Splatter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Water/Water_body.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Script/Main/Main.gd" type="Script" id=3]
+[ext_resource path="res://Script/Main/VS.gd" type="Script" id=3]
 [ext_resource path="res://Sound/inkHit05.wav" type="AudioStream" id=4]
 
 [node name="Main" type="Node2D"]

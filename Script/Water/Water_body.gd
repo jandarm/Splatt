@@ -9,7 +9,7 @@ var springs = []
 var passes = 8
 
 
-onready var half_monitor = OS.get_window_size().x/2
+onready var half_monitor = get_viewport_rect().size.x/2
 export var distance_between_springs = 32
 onready var spring_number = half_monitor/distance_between_springs + 1
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Script/Main/Manager.gd" type="Script" id=1]
 [ext_resource path="res://Sound/IG2 Low.wav" type="AudioStream" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Background/Banana.png" type="Texture" id=5]
 [ext_resource path="res://Background/Grape.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Main/Game_over.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/WinBackground.tres" type="StyleBox" id=8]
+[ext_resource path="res://Scenes/VS/VS.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Main/Main.tscn" type="PackedScene" id=10]
 
 [node name="Manager" type="Node"]
 script = ExtResource( 1 )
@@ -14,8 +17,11 @@ music_low = ExtResource( 2 )
 music_med = ExtResource( 3 )
 music_high = ExtResource( 4 )
 Game_over_scene = ExtResource( 7 )
+Main_scene = ExtResource( 10 )
+VS_scene = ExtResource( 9 )
 Left_team_background = ExtResource( 5 )
 Right_team_background = ExtResource( 6 )
+win_background = ExtResource( 8 )
 Colours = {
 "Blue": Color( 0.733333, 0.988235, 0.956863, 1 ),
 "Green": Color( 0.552941, 0.713726, 0, 1 ),
