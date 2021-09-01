@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec2 direction = vec2(1.0, 1.0);
+uniform float speed;
+
+void fragment () {
+	COLOR = texture(TEXTURE, UV + (direction * TIME * (speed*0.1)));
+}"
+
+[resource]
+resource_local_to_scene = true
+shader = SubResource( 1 )
+shader_param/direction = Vector2( 1, 1 )
+shader_param/speed = 0.5

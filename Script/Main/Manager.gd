@@ -16,6 +16,7 @@ var Right_team_color : Color
 export(Texture) var Left_team_background
 export(Texture) var Right_team_background
 
+#win_background.modulate_color is responsible for last winner color 
 export (StyleBoxTexture) var win_background
 
 """
@@ -49,7 +50,7 @@ func _ready():
 # warning-ignore:unused_argument
 func _process(delta):
 	if Input.is_action_pressed("Exit_to_menu"):
-		SceneChanger.connector("")
+		SceneChanger.go_to("")
 
 func settt(e : Color):
 	return e

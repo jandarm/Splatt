@@ -122,3 +122,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="GridContainer/btnVS" to="." method="change_scene" binds= [ "VS" ]]
+[connection signal="pressed" from="GridContainer/btnExit" to="." method="change_scene" binds= [ "Exit" ]]

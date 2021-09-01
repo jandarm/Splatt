@@ -38,7 +38,7 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "go_to"
+"method": "connector"
 } ]
 }
 
@@ -64,6 +64,5 @@ __meta__ = {
 }
 
 [node name="Body" type="Sprite" parent="Control/Ink"]
-modulate = Color( 0.952941, 0.294118, 0.294118, 1 )
 show_behind_parent = true
 texture = ExtResource( 1 )

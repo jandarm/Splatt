@@ -26,6 +26,7 @@ config/windows_native_icon="res://icon.ico"
 
 Manager="*res://Scenes/Main/Manager.tscn"
 SceneChanger="*res://Scenes/Main/Scene_changer.tscn"
+Parallax="*res://Scenes/Parallax/Parallax.tscn"
 
 [display]
 
