@@ -4,17 +4,19 @@ export(AudioStreamSample) var music_low
 export(AudioStreamSample) var music_med
 export(AudioStreamSample) var music_high
 
-export (PackedScene) var Game_over_scene
-export (PackedScene) var Main_scene
-export (PackedScene) var Settings_scene
-export (PackedScene) var VS_scene
-export (PackedScene) var Coop_scene
+#export (PackedScene) var Game_over_scene
+#export (PackedScene) var Main_scene
+#export (PackedScene) var Settings_scene
+#export (PackedScene) var VS_scene
+#export (PackedScene) var Coop_scene
 
 var Left_team_color : Color
 var Right_team_color : Color
 
-export(Texture) var Left_team_background
-export(Texture) var Right_team_background
+#export(Texture) var Left_team_background
+#export(Texture) var Right_team_background
+var Left_team_background
+var Right_team_background
 
 #win_background.modulate_color is responsible for last winner color 
 export (StyleBoxTexture) var win_background
@@ -41,8 +43,6 @@ export var Colours = {
 
 
 func _ready():
-	print(settt(Colours.Blue))
-	
 	Left_team_color = Colours.Yellow
 	Right_team_color = Colours.Purple
 	pass
@@ -50,7 +50,4 @@ func _ready():
 # warning-ignore:unused_argument
 func _process(delta):
 	if Input.is_action_pressed("Exit_to_menu"):
-		SceneChanger.go_to("")
-
-func settt(e : Color):
-	return e
+		SceneChanger.go_to("Main/Main")

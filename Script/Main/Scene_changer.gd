@@ -13,16 +13,19 @@ func _ready():
 func go_to(destination: String):
 	scene = destination
 	ink.modulate = Manager.win_background.modulate_color
-	animation.play("Transition")	
+	animation.play("Transition")
 	pass
 
 func connector():
-	match scene:
-		"VS": tree.change_scene_to(Manager.VS_scene)
-		"Coop": tree.change_scene_to(Manager.Coop_scene)
-		"Settings": tree.change_scene_to(Manager.Settings_scene)
-		"End": tree.change_scene_to(Manager.Game_over_scene)
-		"Exit": get_tree().quit()
-		_: tree.change_scene_to(Manager.Main_scene)
+	if(scene == "Exit"):
+		get_tree().quit()
+	tree.change_scene("res://Scenes/" + scene +".tscn")
+#	match scene:
+#		"VS": tree.change_scene_to(Manager.VS_scene)
+#		"Coop": tree.change_scene_to(Manager.Coop_scene)
+#		"Settings": tree.change_scene_to(Manager.Settings_scene)
+#		"End": tree.change_scene_to(Manager.Game_over_scene)
+#		"Exit": get_tree().quit()
+#		_: tree.change_scene_to(Manager.Main_scene)
 	Parallax.change_background()
 	pass

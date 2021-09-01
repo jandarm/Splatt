@@ -31,13 +31,13 @@ bus = "SF"
 [node name="Background" type="HSplitContainer" parent="."]
 margin_right = 1024.0
 margin_bottom = 768.0
-dragger_visibility = 2
+dragger_visibility = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LeftTeamBG" type="TextureRect" parent="Background"]
-margin_right = 512.0
+margin_right = 506.0
 margin_bottom = 768.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -50,7 +50,7 @@ __meta__ = {
 }
 
 [node name="RightTeamBG" type="TextureRect" parent="Background"]
-margin_left = 512.0
+margin_left = 518.0
 margin_right = 1024.0
 margin_bottom = 768.0
 grow_horizontal = 2

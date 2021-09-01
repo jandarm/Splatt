@@ -20,5 +20,5 @@ func _ready():
 	pass
 
 func _on_Button_pressed():
-	SceneChanger.go_to("")
+	SceneChanger.go_to("Main/Main")
 	pass

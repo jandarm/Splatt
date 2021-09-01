@@ -1,0 +1,255 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/UI/UI_Elements01.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Advokat Modern.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Script/Settings/Settings.gd" type="Script" id=3]
+[ext_resource path="res://Assets/UI/UI_Banners&Headers.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.988235, 0.996078, 0.839216, 1 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 412, 10, 59, 58 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 341, 9, 59, 58 )
+
+[sub_resource type="DynamicFont" id=4]
+resource_local_to_scene = true
+size = 35
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_char = 3
+font_data = ExtResource( 2 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 411, 231, 18, 18 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 411, 231, 18, 18 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 4 )
+region_rect = Rect2( 8, 318, 296, 43 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 4 )
+region_rect = Rect2( 8, 318, 296, 43 )
+modulate_color = Color( 1, 0.454902, 0.454902, 1 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 4 )
+region_rect = Rect2( 8, 318, 296, 43 )
+margin_left = 2.0562
+modulate_color = Color( 1, 0.454902, 0.454902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.627451, 1, 0.290196, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 1, 0.890196, 0.290196, 1 )
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.707153
+margin_right = 0.707153
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+Pictures = "res://Assets/Background"
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -12.0
+margin_top = -7.0
+margin_right = 10.0
+margin_bottom = 15.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FullScreen" type="CheckBox" parent="."]
+margin_left = 908.768
+margin_top = 28.8148
+margin_right = 975.768
+margin_bottom = 94.8148
+focus_mode = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_icons/checked = SubResource( 2 )
+custom_icons/unchecked = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+clip_text = true
+align = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="FullScreen"]
+margin_left = -233.811
+margin_top = 11.0
+margin_right = -6.81079
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Полный экран"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -511.0
+margin_top = -262.0
+margin_right = -24.0
+margin_bottom = -93.0
+custom_constants/vseparation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeSlider" type="HSlider" parent="GridContainer"]
+margin_right = 487.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+custom_icons/grabber_highlight = SubResource( 5 )
+custom_icons/grabber = SubResource( 6 )
+custom_styles/slider = SubResource( 7 )
+custom_styles/grabber_area_highlight = SubResource( 8 )
+custom_styles/grabber_area = SubResource( 9 )
+min_value = -80.0
+max_value = 0.0
+scrollable = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GridContainer/VolumeSlider"]
+margin_left = -461.619
+margin_top = -2.87019
+margin_right = -163.619
+margin_bottom = 42.1298
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Общая громкость"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicSlider" type="HSlider" parent="GridContainer"]
+margin_top = 63.0
+margin_right = 487.0
+margin_bottom = 106.0
+custom_icons/grabber_highlight = SubResource( 5 )
+custom_icons/grabber = SubResource( 6 )
+custom_styles/slider = SubResource( 7 )
+custom_styles/grabber_area_highlight = SubResource( 8 )
+custom_styles/grabber_area = SubResource( 9 )
+min_value = -80.0
+max_value = 0.0
+scrollable = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GridContainer/MusicSlider"]
+margin_left = -461.619
+margin_top = -2.87019
+margin_right = -144.619
+margin_bottom = 42.1298
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Громкость музыки"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EffectsSlider" type="HSlider" parent="GridContainer"]
+margin_top = 126.0
+margin_right = 487.0
+margin_bottom = 169.0
+custom_icons/grabber_highlight = SubResource( 5 )
+custom_icons/grabber = SubResource( 6 )
+custom_styles/slider = SubResource( 7 )
+custom_styles/grabber_area_highlight = SubResource( 8 )
+custom_styles/grabber_area = SubResource( 9 )
+min_value = -80.0
+max_value = 0.0
+scrollable = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GridContainer/EffectsSlider"]
+margin_left = -461.619
+margin_top = -2.87019
+margin_right = -100.619
+margin_bottom = 42.1298
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Громкость эффектов"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftTeamIcons" type="ItemList" parent="."]
+margin_left = 17.8578
+margin_top = 417.0
+margin_right = 491.858
+margin_bottom = 746.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_styles/selected = SubResource( 11 )
+custom_styles/bg = SubResource( 10 )
+custom_colors/guide_color = Color( 1, 1, 1, 1 )
+items = [ "", null, false ]
+max_columns = 3
+same_column_width = true
+fixed_icon_size = Vector2( 150, 150 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightTeamIcons" type="ItemList" parent="."]
+margin_left = 528.389
+margin_top = 417.0
+margin_right = 1002.39
+margin_bottom = 746.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_styles/selected = SubResource( 12 )
+custom_styles/bg = SubResource( 10 )
+custom_colors/guide_color = Color( 1, 1, 1, 1 )
+items = [ "", null, false ]
+max_columns = 3
+same_column_width = true
+fixed_icon_size = Vector2( 150, 150 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="FullScreen" to="." method="_on_FullScreen_pressed"]
+[connection signal="value_changed" from="GridContainer/VolumeSlider" to="." method="_on_VolumeSlider_value_changed"]
+[connection signal="value_changed" from="GridContainer/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="GridContainer/EffectsSlider" to="." method="_on_EffectsSlider_value_changed"]
+[connection signal="item_selected" from="LeftTeamIcons" to="." method="_on_LeftTeamIcons_item_selected"]
+[connection signal="item_selected" from="RightTeamIcons" to="." method="_on_RightTeamIcons_item_selected"]

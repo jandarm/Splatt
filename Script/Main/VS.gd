@@ -63,11 +63,11 @@ func _process(delta):
 	if(puddle_left.position.y < 0):
 		music.stop()
 		Manager.win_background.modulate_color = Manager.Left_team_color
-		SceneChanger.go_to("End")
+		SceneChanger.go_to("Main/Game_over")
 	elif(puddle_right.position.y < 0):
 		music.stop()
 		Manager.win_background.modulate_color = Manager.Right_team_color
-		SceneChanger.go_to("End")
+		SceneChanger.go_to("Main/Game_over")
 	pass
 
 func hit_left():

@@ -5,6 +5,8 @@ onready var rng = RandomNumberGenerator.new()
 var PTextures : Array
 
 func _ready():
+	
+	#Reading files from Background parallax dirrectory
 	var dir = Directory.new()
 	if (dir.open(BackgroundTextures) == OK):
 		dir.list_dir_begin(true,true)
@@ -22,7 +24,6 @@ func _ready():
 		dir.list_dir_end()
 	else:
 		print("An error occurred when trying to access the Parallax texture dirrectory path.")
-	print(PTextures)
 	change_background()
 	pass 
 
