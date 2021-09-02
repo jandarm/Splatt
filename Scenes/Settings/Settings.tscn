@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/UI/UI_Elements01.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Advokat Modern.ttf" type="DynamicFontData" id=2]
@@ -48,14 +48,49 @@ region_rect = Rect2( 8, 318, 296, 43 )
 margin_left = 2.0562
 modulate_color = Color( 1, 0.454902, 0.454902, 1 )
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.627451, 1, 0.290196, 1 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 1, 0.890196, 0.290196, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.388235, 0.423529, 0.560784, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.4, 0.4, 0.4, 1 )
+
+[sub_resource type="Theme" id=15]
+PopupMenu/colors/font_color = Color( 0, 0, 0, 1 )
+PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
+PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
+PopupMenu/colors/font_color_hover = Color( 1, 1, 1, 1 )
+PopupMenu/constants/hseparation = 4
+PopupMenu/constants/vseparation = 4
+PopupMenu/fonts/font = null
+PopupMenu/icons/checked = null
+PopupMenu/icons/radio_checked = null
+PopupMenu/icons/radio_unchecked = null
+PopupMenu/icons/submenu = null
+PopupMenu/icons/unchecked = null
+PopupMenu/styles/hover = SubResource( 13 )
+PopupMenu/styles/labeled_separator_left = null
+PopupMenu/styles/labeled_separator_right = null
+PopupMenu/styles/panel = SubResource( 14 )
+PopupMenu/styles/panel_disabled = null
+PopupMenu/styles/separator = null
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.564706, 0.647059, 0.968627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.847059, 0.878431, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.784314, 0.827451, 1, 1 )
 
 [node name="Settings" type="Control"]
 anchor_right = 1.0
@@ -70,6 +105,7 @@ __meta__ = {
 Pictures = "res://Assets/Background"
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -12.0
@@ -83,9 +119,9 @@ __meta__ = {
 
 [node name="FullScreen" type="CheckBox" parent="."]
 margin_left = 908.768
-margin_top = 28.8148
+margin_top = 16.0
 margin_right = 975.768
-margin_bottom = 94.8148
+margin_bottom = 82.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
@@ -117,11 +153,12 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -511.0
-margin_top = -262.0
+margin_top = -288.0
 margin_right = -24.0
-margin_bottom = -93.0
+margin_bottom = -119.0
 custom_constants/vseparation = 20
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -213,37 +250,122 @@ __meta__ = {
 }
 
 [node name="LeftTeamIcons" type="ItemList" parent="."]
-margin_left = 17.8578
-margin_top = 417.0
-margin_right = 491.858
+margin_left = 18.0
+margin_top = 448.0
+margin_right = 492.0
 margin_bottom = 746.0
+rect_clip_content = false
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_styles/selected = SubResource( 11 )
-custom_styles/bg = SubResource( 10 )
+custom_styles/selected = SubResource( 10 )
+custom_styles/bg = SubResource( 11 )
 custom_colors/guide_color = Color( 1, 1, 1, 1 )
 items = [ "", null, false ]
 max_columns = 3
 same_column_width = true
 fixed_icon_size = Vector2( 150, 150 )
 __meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LeftTeamIcons"]
+margin_left = 5.0
+margin_top = -49.0
+margin_right = 349.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Фон левой команды"
+__meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RightTeamIcons" type="ItemList" parent="."]
-margin_left = 528.389
-margin_top = 417.0
-margin_right = 1002.39
+margin_left = 528.0
+margin_top = 448.0
+margin_right = 1002.0
 margin_bottom = 746.0
+rect_clip_content = false
 focus_mode = 0
 mouse_default_cursor_shape = 2
 custom_styles/selected = SubResource( 12 )
-custom_styles/bg = SubResource( 10 )
+custom_styles/bg = SubResource( 11 )
 custom_colors/guide_color = Color( 1, 1, 1, 1 )
 items = [ "", null, false ]
 max_columns = 3
 same_column_width = true
 fixed_icon_size = Vector2( 150, 150 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="RightTeamIcons"]
+margin_left = -1.09613
+margin_top = -49.0
+margin_right = 357.904
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Фон правой команды"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightTeamList" type="OptionButton" parent="."]
+margin_left = 807.0
+margin_top = 328.0
+margin_right = 1006.0
+margin_bottom = 392.0
+theme = SubResource( 15 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="RightTeamList"]
+margin_left = -279.707
+margin_top = -48.0
+margin_right = 89.2928
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Цвет правой команды"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftTeamList" type="OptionButton" parent="."]
+margin_left = 295.293
+margin_top = 328.0
+margin_right = 494.293
+margin_bottom = 392.0
+theme = SubResource( 15 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LeftTeamList"]
+margin_left = -279.707
+margin_top = -48.0
+margin_right = 89.2928
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Цвет левой команды"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -253,3 +375,5 @@ __meta__ = {
 [connection signal="value_changed" from="GridContainer/EffectsSlider" to="." method="_on_EffectsSlider_value_changed"]
 [connection signal="item_selected" from="LeftTeamIcons" to="." method="_on_LeftTeamIcons_item_selected"]
 [connection signal="item_selected" from="RightTeamIcons" to="." method="_on_RightTeamIcons_item_selected"]
+[connection signal="item_selected" from="RightTeamList" to="." method="_on_RightTeamList_item_selected"]
+[connection signal="item_selected" from="LeftTeamList" to="." method="_on_LeftTeamList_item_selected"]
