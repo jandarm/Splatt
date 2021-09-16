@@ -1,6 +1,8 @@
 extends Node
 
 export(String, DIR) var Pictures
+#var new_path = Directory.new().get_current_dir() + "Assets/Background"
+
 var left_team
 var right_team
 
