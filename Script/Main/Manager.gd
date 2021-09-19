@@ -15,6 +15,8 @@ var Right_team_color : Color
 
 #export(Texture) var Left_team_background
 #export(Texture) var Right_team_background
+
+#Type texture
 var Left_team_background
 var Right_team_background
 
